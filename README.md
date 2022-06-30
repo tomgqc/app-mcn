@@ -1,13 +1,4 @@
 # app-mcn
 
 # Happy Path
-@startuml
-skinparam actorStyle awesome
-:User: --> (Lifeness) : Artifact\n+\nIdentifier
-:User: <-- (Lifeness) : Success
-"User application" as :User:
-"Lifeness test service" as (Lifeness)
-(Lifeness) --> (Comparison) : Artifact\n+\nIdentifier
-(Lifeness) --> (Comparison) : Success
-"Facial comparison service" as (Comparison)
-@enduml
+![happy-path-diagram](http://www.plantuml.com/plantuml/png/VOx1IiH038RlynIX9qNc1Oh8YY08tXPlUmdPB0HdCaEIAhwzgwNMNdhxm_z_uJjueCLKI_9tqOw65P2YsJ6-2WD-ihVAQNnpjX5oVe2RLxcmilijZF1e8HUaEEdTIL_EhDTJs9RzVSxR_N4YkiOq_FI0lHSX36aw03hCL1eM0e8zmDa-XFXtiJvBQvordbhjQE9DTyJsgLNl6Kcm0Fsr_oqsL3gmdgTQlW40)
