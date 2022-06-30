@@ -1,4 +1,4 @@
 # app-mcn
 
 # Happy Path
-![happy-path-diagram](http://www.plantuml.com/plantuml/png/VOx1IiH038RlynIX9qNc1Oh8YY08tXPlUmdPB0HdCaEIAhwzgwNMNdhxm_z_uJjueCLKI_9tqOw65P2YsJ6-2WD-ihVAQNnpjX5oVe2RLxcmilijZF1e8HUaEEdTIL_EhDTJs9RzVSxR_N4YkiOq_FI0lHSX36aw03hCL1eM0e8zmDa-XFXtiJvBQvordbhjQE9DTyJsgLNl6Kcm0Fsr_oqsL3gmdgTQlW40)
+![happy-path-diagram](http://www.plantuml.com/plantuml/png/VP31IiOm383lVOgmao9zWI4o4GJ1s_2sI-Wo2BRfQ3B5jxTZJBlBVqkRxoiV7TIms9QYqq-M5Gicm62vZFOJ2V2RD2To_OTIwS7x9xXxvuM4LE-XX-TYl5H-aeT9tcQIUcGg9__e_PKVjn3gwBfz3xYkaGCQP-a05GxBTQS1HcfGxxuuq4uqZxd_ySXwoQdcisQv5TPODQwrBdcl61WZXB_jjQAnt40or__x1G00)
