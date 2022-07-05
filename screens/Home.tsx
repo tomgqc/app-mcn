@@ -7,10 +7,10 @@ export default function HomeScreen({ navigation }) {
     return (
       <View style={styles.container}>
         <Text>Home Screen</Text>
-        <StatusBar style="auto" />
+        <StatusBar style={"auto"} />
         <Button
             title='Prendre une photo'
-            onPress={() => navigation.navigate('About')}
+            onPress={() => navigation.navigate('Photo')}
         />
       </View>
     );

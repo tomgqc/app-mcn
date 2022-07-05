@@ -6,7 +6,7 @@ export default function PhotoScreen() {
     return (
       <View style={styles.container}>
         <Text>Photo Screen</Text>
-        <StatusBar style="auto" />
+        <StatusBar style="auto"/>
       </View>
     );
   }

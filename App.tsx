@@ -9,8 +9,26 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Home' component={HomeScreen} options={{ title: 'Accueil' }}/>
-        <Stack.Screen name='About' component={PhotoScreen} options={{ title: 'Prendre la photo' }}/>
+        <Stack.Screen 
+          name='Home'
+          component={HomeScreen}
+          options={{ 
+            title: 'Accueil',
+            headerStyle: { backgroundColor: '#003DA5' },
+            headerTintColor: 'white',
+            statusBarStyle: 'dark',
+            statusBarAnimation: 'fade'
+            }}/>
+        <Stack.Screen
+          name='Photo' 
+          component={PhotoScreen} 
+          options={{
+            title: 'Prendre la photo',
+            headerStyle: { backgroundColor: '#003DA5' },
+            headerTintColor: 'white',
+            statusBarStyle: 'dark',
+            statusBarAnimation: 'fade'
+            }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
