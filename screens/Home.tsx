@@ -1,17 +1,20 @@
 import * as React from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { Button, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, Pressable, Text, View, Image } from 'react-native';
 import { styles } from '../styles';
 
 export default function HomeScreen({ navigation }) {
     return (
-      <View style={styles.container}>
-        <Text>Home Screen</Text>
-        <StatusBar style={"auto"} />
-        <Button
-            title='Prendre une photo'
-            onPress={() => navigation.navigate('Photo')}
+      <SafeAreaView style={styles.container}>
+        <StatusBar hidden={false} animated={styles.statusbar.animated} backgroundColor={styles.statusbar.backgroundColor} />
+        <Image 
+          style={styles.logo}
+          source={require('../assets/logo.png')}
         />
-      </View>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('Photo')}>
+          <Text style={styles.buttonText}>
+            Prendre une photo
+          </Text>
+        </Pressable>
+      </SafeAreaView>
     );
   }
