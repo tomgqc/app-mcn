@@ -6,7 +6,7 @@ export default function PhotoScreen() {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar hidden={false} animated={styles.statusbar.animated} backgroundColor={styles.statusbar.backgroundColor} />
-        <Text>Photo Screen</Text>
+        <Text>Se connecter à son compte</Text>
       </SafeAreaView>
     );
   }
