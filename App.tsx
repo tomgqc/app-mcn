@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import HomeScreen from './screens/Home';
 import PhotoScreen from './screens/Photo';
 import LivenessScreen from './screens/Liveness'
+import ComparisonScreen from './screens/Comparison'
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +34,15 @@ export default function App() {
             name='Liveness' 
             component={LivenessScreen} 
             options={{
-              title: 'Test de vivacité: DEMO',
+              title: 'Test de vivacité: FaceTec',
+              headerStyle: { backgroundColor: '#003DA5' },
+              headerTintColor: 'white'
+              }}/>
+              <Stack.Screen
+            name='Comparison' 
+            component={ComparisonScreen} 
+            options={{
+              title: 'Comparaison faciale: Facetec',
               headerStyle: { backgroundColor: '#003DA5' },
               headerTintColor: 'white'
               }}/>
