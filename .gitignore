@@ -10,5 +10,8 @@ npm-debug.*
 *.orig.*
 web-build/
 
+# Pour éviter les problèmes de dépendances
+package-lock.json
+
 # macOS
 .DS_Store
