@@ -4,8 +4,6 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
     },
     liveness: {
       alignItems: 'flex-start',
@@ -24,12 +22,12 @@ export const styles = StyleSheet.create({
     button: {
       alignItems: 'center',
       justifyContent: 'center',
-      paddingVertical: 12,
-      paddingHorizontal: 32,
       borderRadius: 4,
       elevation: 3,
       marginTop: 25,
       backgroundColor: '#003DA5',
+      flex: 0.1,
+      margin: 20,
     },
     buttonText: {
       fontSize: 16,
@@ -48,5 +46,25 @@ export const styles = StyleSheet.create({
     statusbar: {
       animated: true,
       backgroundColor: "#002970"
+    },
+    camera: {
+      flex: 1,
+    },
+    buttonContainer: {
+      flex: 1,
+      backgroundColor: 'transparent',
+      flexDirection: 'row',
+      margin: 20,
+    },
+    cameraButton: {
+      flex: 0.1,
+      alignSelf: 'flex-end',
+      alignItems: 'center',
+      backgroundColor: 'transparent',
+      margin: 20,
+    },
+    icon: {
+      width: 52,
+      height: 52,
     }
   });
