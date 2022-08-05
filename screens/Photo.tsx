@@ -1,18 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SafeAreaView, StatusBar, Text, View, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../styles';
 import { Camera, CameraType } from 'expo-camera';
+import * as MediaLibrary from 'expo-media-library'
 
 export default function PhotoScreen() {
-    const [hasPermission, setHasPermission] = useState(null);
+    let cameraRef = useRef();
+
+    const [hasCameraPermission, setHasCameraPermission] = useState(null);
+    const [hasMediaPermission, setHasMediaPermission] = useState(null);
     const [type, setType] = useState(CameraType.back);
+    const [photo, setPhoto] = useState(null);
 
     useEffect(() => {
       (async () => {
-        const { status } = await Camera.requestCameraPermissionsAsync();
-        setHasPermission(status === 'granted');
+        const cameraPermission = await Camera.requestCameraPermissionsAsync();
+        const mediaLibraryPermission = await MediaLibrary.requestPermissionsAsync();
+        setHasCameraPermission(cameraPermission.status === "granted");
+        setHasMediaPermission(cameraPermission.status === "granted");
       })();
     }, []);
+
+    if(hasCameraPermission === null || !hasCameraPermission) {
+      return <Text>Accepter l'accès à la caméra</Text>
+    }
+    if(hasCameraPermission === null || !hasCameraPermission) {
+      return <Text>Accepter l'accès aux données de l'appareil</Text>
+    }
 
     return (
       <SafeAreaView style={styles.container}>
@@ -23,6 +37,27 @@ export default function PhotoScreen() {
             style={styles.cameraButton}
             onPress={() => {
               setType(type === CameraType.back ? CameraType.front : CameraType.back);
+            }}>
+            <Image
+              style={styles.icon}
+              source={require('../assets/flip-camera.png')}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.cameraButton}
+            onPress={async () => {
+              let options = {
+                quality: 1,
+                base64: true,
+                exif: false
+              }
+
+              let newPhoto = await cameraRef.current.takePictureAsync(options);
+              setPhoto(newPhoto);
+
+              if(photo) {
+                
+              }
             }}>
             <Image
               style={styles.icon}
