@@ -1,10 +1,12 @@
-type Method = "GET"|"POST"|"DELETE|UPDATE";
+import { BaseUrl,Paths } from "../../../Config";
 
-export interface Result{
+type Method = "GET"|"POST"|"DELETE"|"UPDATE";
+
+export default interface Result{
     data:any;
 }
 
-export async function Request(path:string,method:Method,body?:any):Promise<Result>{
+export async function Request(path:Paths,method:Method,body?:any):Promise<Result>{
     let data:Result = {data:"None"};
     if(path.trim().length <= 0){
         data = {data:"Le chemin n'est pas valide!"}
@@ -16,7 +18,7 @@ export async function Request(path:string,method:Method,body?:any):Promise<Resul
             let init : any = {method:method}
             init.headers = header;
             init.body = JSON.stringify(body);
-            await fetch(path,init).then(res => {
+            await fetch(BaseUrl+path,init).then(res => {
                 return res.text();
             }).then(text => {
                 data.data = JSON.parse(text);
