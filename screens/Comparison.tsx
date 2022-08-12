@@ -7,22 +7,12 @@ export default function HomeScreen({ navigation }) {
       <SafeAreaView style={styles.container}>
         <StatusBar hidden={false} animated={styles.statusbar.animated} backgroundColor={styles.statusbar.backgroundColor} />
         <Image 
-          style={styles.logo}
-          source={require('../assets/logo.png')}
+          style={styles.liveness}
+          source={require('../assets/liveness.png')}
         />
         <Pressable style={styles.button} onPress={() => navigation.navigate('Photo')}>
           <Text style={styles.buttonText}>
-            Prendre une photo
-          </Text>
-        </Pressable>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('Liveness')}>
-          <Text style={styles.buttonText}>
-            Faire un test de vivacité
-          </Text>
-        </Pressable>
-        <Pressable style={styles.button} onPress={() => navigation.navigate('Comparison')}>
-          <Text style={styles.buttonText}>
-            Faire une DEMO de comparaison faciale
+            Commencer la comparaison faciale
           </Text>
         </Pressable>
       </SafeAreaView>
