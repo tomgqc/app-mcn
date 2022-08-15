@@ -2,7 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { SafeAreaView, StatusBar, Text, View, TouchableOpacity, Image } from 'react-native';
 import { styles } from '../styles';
 import { Camera, CameraType } from 'expo-camera';
-import * as MediaLibrary from 'expo-media-library'
+import * as MediaLibrary from 'expo-media-library';
+import { Request } from './Components/API/api';
+import Result from './Components/API/api';
+import {DeviceKey} from '../Config';
 
 export default function PhotoScreen() {
     let cameraRef = useRef();
@@ -24,13 +27,14 @@ export default function PhotoScreen() {
     if(hasCameraPermission === null || !hasCameraPermission) {
       return <Text>Accepter l'accès à la caméra</Text>
     }
-    if(hasCameraPermission === null || !hasCameraPermission) {
+    if(mediaLibraryPermission === null || !mediaLibraryPermission) {
       return <Text>Accepter l'accès aux données de l'appareil</Text>
     }
-
+    let r = await Request("/status","GET",DeviceKey)
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar hidden={false} animated={styles.statusbar.animated} backgroundColor={styles.statusbar.backgroundColor} />
+        <Text>{r.data}</Text>
         <Camera style={styles.camera} type={type}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
