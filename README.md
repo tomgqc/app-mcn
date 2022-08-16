@@ -26,7 +26,7 @@ TODO
   
 Selon nos expérimentations, il serait plus difficile de partir de zéro l'application puis par la suite intégrer le SDK, que de partir du SDK et monter l'application désiré autour du code fourni. En revanche, il semble possible de créer l'application sans intégrer le SDK de l'application (ce que nous avons tenté à la fin).  
   
-Le SDK de Facetec possède de nombreux composants additionnels et un webpack c'est donc en grande partie pour cela que l'on recommanderait de partir du sdk. (afin d'avoir tout le nécessaire)  
+Le SDK de Facetec possède de nombreux composants additionnels et utilise un webpack. C'est donc en grande partie pour cela que l'on recommanderait de partir du sdk. (afin d'avoir tout le nécessaire) De plus, il n'y a pas de documentation ni de service à jour qui aide à monter l'application. (exemple pour REACT-Native : facetec-module-bridge. [lien] : (https://www.npmjs.com/package/react-native-facetec))  
   
 Si le projet est très grand, doit possèder beaucoup de fonctionnalités, ou se distribue à grande échelle, nous recommandons fortement de monter votre propre application et créer vos propres requêtes afin de les adapter plus facilement à vos besoins. ([voir exemple](/screens/Components/API/api.tsx))  
 [a relative link](App.tsx)
