@@ -1,26 +1,36 @@
 # app-mcn
 
-# Happy Path
-
-1.	L’usager soumet l’artéfact biométrique encrypté ainsi qu’un identifiant grâce à l’application citoyen.
-2.	Le service de test de vivacité performe un test de vivacité qui est concluant.
-3.	Le service de vivacité traite l’artéfact pour retirer les données ayant servies au test de vivacité.
-4.	Le service de vivacité encrypte les données pour les expédier au service de comparaison faciale puis les supprimes après avoir envoyées ces mêmes données.
-5.	Le service de comparaison faciale performe une comparaison faciale à partir d’une photo puisée dans la banque de l’état grâce à l’identifiant. La comparaison est concluante.
-6.	Le service de comparaison retourne un statut de succès au service de test de vivacité.
-7.	Le service de test de vivacité retourne en statut de succès à l’application citoyen.  
-
-
-![happy-path-diagram](http://www.plantuml.com/plantuml/png/VP31IiOm383lVOgmao9zWI4o4GJ1s_2sI-Wo2BRfQ3B5jxTZJBlBVqkRxoiV7TIms9QYqq-M5Gicm62vZFOJ2V2RD2To_OTIwS7x9xXxvuM4LE-XX-TYl5H-aeT9tcQIUcGg9__e_PKVjn3gwBfz3xYkaGCQP-a05GxBTQS1HcfGxxuuq4uqZxd_ySXwoQdcisQv5TPODQwrBdcl61WZXB_jjQAnt40or__x1G00)
+Ceci est le document de référence au stage en comparaison faciale de l'été 2022 de Tomy Chouinard et Zackary G Tremblay. Nous n'avons malheureusement pas eu le temps de finaliser tous les points concernant FaceTec et ses intégrations de comparaison faciale par manque de temps et par le côté vague de certaines informations données par FaceTec concernant son produit.
 
 # Prérequis
 [SDK - Facetec](https://dev.facetec.com/downloads)  +  [aws - instance EC2](https://aws.amazon.com/fr/ec2/)  
   
-Base de données : Facetec recommande d'utiliser MongoDB, mais une utilisation d'un autre moteur de gestion de BD est possible (recommendation format JSON)
-#  
+Base de données : Facetec recommande fortement d'utiliser MongoDB, mais une utilisation d'un autre moteur de gestion de BD est possible (recommendation format JSON)
   
 # Installation côté serveur :
-TODO
+Au niveau de l'installation du serveur FaceTec, plusieurs options vont s'offrir à vous. Cependant, dans tous les cas, une machine EC2 d'AWS est nécessaire. Les spécifications vont vraiment dépendre de votre environnement de test, mais en point de référence, voici les spécifications de la machine que nous avons utilisé:
+
+### Création de la machine virtuelle ###
+
+- Type d'instance: t2.2xlarge
+- Stockage: trois disques de 25GB (peut être seulement un disque avec un espace équivalent)
+- OS: Ubuntu (Linux/UNIX) 22.04.1 LTS
+
+Dans la machine, il sera nécessaire d'installer Node et MongoDB pour que le serveur fonctionne correctement.
+
+### Configuration du Server SDK ###
+
+Après avoir créé votre VM, il sera nécessaire de configurer le SDK serveur. Cela est fait en ajoutant une string de connection (MongoDB URI) dans le serveur. Il sera aussi nécessaire de configurer le fichier config.yaml pour déployer votre serveur avec Docker, ou tout autre service de déploiement. Il est par la suite nécessaire de transférer votre SDK dans la machine virtuelle EC2.
+
+### Création de la base de données ###
+Concernant la création de la base de données, nous avons essayé quatre options:
+
+- Utiliser les services cloud de MongoDB Cloud Atlas (*non recommandé*)
+- Utilisation du service AWS DocumentDB
+- Création d'une nouvelle VM qui va s'occuper d'accueillir la base de données
+- Création de la base de données directement sur la VM du serveur SDK
+
+Dans les trois cas, nous avons eu de la difficulté à configurer la base de données, puisque nous avons manqué de temps. De ce fait, l'option étant la plus recommandée est celle de DocumentDB. Une configuration minime est nécessaire, et le lien entre DocumentDB et EC2 est beaucoup plus simple puisque celui-ci est fait à l'intérieur des services AWS à notre disposition. Cependant, il faut s'assurer d'avoir un environnement AWS Cloud9 de configuré, puisque certains services DocumentDB sont fournis dans ce type de console.
 
 # Ajout du SDK dans l'application : 
   
@@ -30,3 +40,10 @@ Le SDK de Facetec possède de nombreux composants additionnels et utilise un web
   
 Si le projet est très grand, doit possèder beaucoup de fonctionnalités, ou se distribue à grande échelle, nous recommandons fortement de monter votre propre application et créer vos propres requêtes afin de les adapter plus facilement à vos besoins. ([voir exemple](/screens/Components/API/api.tsx))  
 [a relative link](App.tsx)
+
+# Test de l'api de l'application mobile
+
+Pour tester le serveur de FaceTec, plusieurs applications démonstratives sont fournies en téléchargement sur leur site. Celle que nous avons utilisé est la suivante:
+[FaceTec-Browser-SDK-React-Typescript-9.2.0.zip](https://github.com/ZackaryGTremblay/app-mcn/files/9377668/FaceTec-Browser-SDK-React-Typescript-9.2.0.zip)
+
+Pour que l'application fonctione, une X-Device-Key devra être ajoutée dans le fichier Config.js. Cette clé est située dans la page du compte développeur de FaceTec (https://dev.facetec.com/account)
