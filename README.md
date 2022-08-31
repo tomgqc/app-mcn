@@ -16,7 +16,7 @@ Au niveau de l'installation du serveur FaceTec, plusieurs options vont s'offrir 
 - Stockage: trois disques de 25GB (peut être seulement un disque avec un espace équivalent)
 - OS: Ubuntu (Linux/UNIX) 22.04.1 LTS
 
-Dans la machine, il sera nécessaire d'installer Node et MongoDB pour que le serveur fonctionne correctement.
+Dans la machine, il sera nécessaire d'installer [Node](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-fr) et MongoDB pour que le serveur fonctionne correctement.
 
 ### Configuration du Server SDK ###
 
@@ -30,7 +30,7 @@ Concernant la création de la base de données, nous avons essayé quatre option
 - Création d'une nouvelle VM qui va s'occuper d'accueillir la base de données
 - Création de la base de données directement sur la VM du serveur SDK par Docker
 
-Dans 2 des 4 cas, nous avons eu de la difficulté à configurer la base de données, puisque nous avons manqué de temps. De ce fait, nous recommandons d'utiliser soit DocumentDB ou MongoDB directement sur votre VM. Une configuration minime est nécessaire, et le lien entre DocumentDB et EC2 est beaucoup plus simple puisque celui-ci est fait à l'intérieur des services AWS à notre disposition. Cependant, il faut s'assurer d'avoir un environnement AWS Cloud9 de configuré, puisque certains services DocumentDB sont fournis dans ce type de console. Pour MongoDB sur la VM directement, vous devez tout d'abord installer Docker voici un lien expliquant comment faire que nous avons suivi : [Installation Docker](https://docs.docker.com/engine/install/ubuntu/)
+Dans 2 des 4 cas, nous avons eu de la difficulté à configurer la base de données, puisque nous avons manqué de temps. De ce fait, nous recommandons d'utiliser soit DocumentDB ou MongoDB directement sur votre VM. Une configuration minime est nécessaire, et le lien entre DocumentDB et EC2 est beaucoup plus simple puisque celui-ci est fait à l'intérieur des services AWS à notre disposition. Cependant, il faut s'assurer d'avoir un environnement AWS Cloud9 de configuré, puisque certains services DocumentDB sont fournis dans ce type de console.  Pour MongoDB sur la VM directement, vous devez tout d'abord installer Docker voici un lien expliquant comment faire que nous avons suivi : [Installation Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 # Ajout du SDK dans l'application : 
   
