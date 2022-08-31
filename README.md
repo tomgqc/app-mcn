@@ -35,11 +35,21 @@ Dans 2 des 4 cas, nous avons eu de la difficulté à configurer la base de donn�
 # Guide Docker : 
 
 - Pour partir le service Docker : `sudo systemctl start docker`
-- Pour lancer le conteneur l'id que nous avons utilisé est "bd" : `docker start **CONTAINER ID**`
+- Pour lancer le conteneur (l'id que nous avons utilisé est "bd") : `docker start **CONTAINER ID**`
 
 # Guide MongoDB : 
 
 # Guide Connexion SSH au serveur : 
+
+# Procédure de lancement pour le Serveur Standard : 
+Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: http://localhost:8080
+- Commande pour construire le Serveur : `docker-compose build`
+- Commande pour mettre en marche le Serveur : `docker-compose up`
+
+# Procédure de lancement pour le Serveur Modifier : 
+Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: http://localhost:8080
+- Commande pour construire le Serveur : `./build.sh` ou `sh build.sh`
+- Commande pour mettre en marche le Serveur : `./run.sh` ou `sh run.sh`
 
 # Ajout du SDK dans l'application : 
   
