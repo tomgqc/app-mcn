@@ -35,6 +35,11 @@ Dans 2 des 4 cas, nous avons eu de la difficulté à configurer la base de donn�
 # Guide Docker : 
 
 - Pour partir le service Docker : `sudo systemctl start docker`
+- Pour lancer le conteneur l'id que nous avons utilisé est "bd" : `docker start **CONTAINER ID**`
+
+# Guide MongoDB : 
+
+# Guide Connexion SSH au serveur : 
 
 # Ajout du SDK dans l'application : 
   
