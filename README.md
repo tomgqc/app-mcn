@@ -28,9 +28,9 @@ Concernant la création de la base de données, nous avons essayé quatre option
 - Utiliser les services cloud de MongoDB Cloud Atlas (*non recommandé*)
 - Utilisation du service AWS DocumentDB
 - Création d'une nouvelle VM qui va s'occuper d'accueillir la base de données
-- Création de la base de données directement sur la VM du serveur SDK
+- Création de la base de données directement sur la VM du serveur SDK par Docker
 
-Dans les trois cas, nous avons eu de la difficulté à configurer la base de données, puisque nous avons manqué de temps. De ce fait, l'option étant la plus recommandée est celle de DocumentDB. Une configuration minime est nécessaire, et le lien entre DocumentDB et EC2 est beaucoup plus simple puisque celui-ci est fait à l'intérieur des services AWS à notre disposition. Cependant, il faut s'assurer d'avoir un environnement AWS Cloud9 de configuré, puisque certains services DocumentDB sont fournis dans ce type de console.
+Dans 2 des 4 cas, nous avons eu de la difficulté à configurer la base de données, puisque nous avons manqué de temps. De ce fait, nous recommandons d'utiliser soit DocumentDB ou MongoDB directement sur votre VM. Une configuration minime est nécessaire, et le lien entre DocumentDB et EC2 est beaucoup plus simple puisque celui-ci est fait à l'intérieur des services AWS à notre disposition. Cependant, il faut s'assurer d'avoir un environnement AWS Cloud9 de configuré, puisque certains services DocumentDB sont fournis dans ce type de console. Pour MongoDB sur la VM directement, vous devez tout d'abord installer Docker voici un lien expliquant comment faire que nous avons suivi : [Installation Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 # Ajout du SDK dans l'application : 
   
