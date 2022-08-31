@@ -1,6 +1,6 @@
-# app-mcn
+# App-MCN-Facetec
 
-Ceci est le document de référence au stage en comparaison faciale de l'été 2022 de Tomy Chouinard et Zackary G Tremblay. Nous n'avons malheureusement pas eu le temps de finaliser tous les points concernant FaceTec et ses intégrations de comparaison faciale par manque de temps et par le côté vague de certaines informations données par FaceTec concernant son produit.
+Ceci est le document de référence au stage de l'été 2022 de Tomy Chouinard et Zackary G Tremblay. Nous n'avons malheureusement pas eu le temps de finaliser tous les points concernant FaceTec et ses intégrations de comparaison faciale par manque de temps et par le côté vague de certaines informations données par FaceTec concernant son produit.
 
 # Prérequis
 [SDK - Facetec](https://dev.facetec.com/downloads)  +  [aws - instance EC2](https://aws.amazon.com/fr/ec2/)  
@@ -36,8 +36,15 @@ Dans 2 des 4 cas, nous avons eu de la difficulté à configurer la base de donn�
 
 - Pour partir le service Docker : `sudo systemctl start docker`
 - Pour lancer le conteneur (l'id que nous avons utilisé est "bd") : `docker start **CONTAINER ID**`
+- Pour entrer en ligne de commande du container : `docker exec -it <CONTAINER_ID> bash`
 
 # Guide MongoDB : 
+Note : La liste de commandes n'est que basique. Référez-vous à la documentation officielle pour plus de commandes : [Documentation](https://www.mongodb.com/docs/manual/reference/mongo-shell/)
+- Entrez dans l'interpréteur de commande de MongoDB : `mongo` ou `mongosh`
+- Pour montrer les bases de données disponible : `show dbs`
+- Pour sélectionner une base de données (nécessaire avant toute autre action) : `use "DB_NAME"`
+- Pour montrer les collections : `show collections`
+- Pour montrer les données enregistrées : `db.collection.find()`
 
 # Guide Connexion SSH au serveur : 
 
@@ -46,7 +53,7 @@ Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: ht
 - Commande pour construire le Serveur : `docker-compose build`
 - Commande pour mettre en marche le Serveur : `docker-compose up`
 
-# Procédure de lancement pour le Serveur Modifier : 
+# Procédure de lancement pour le Serveur Modifié : 
 Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: http://localhost:8080
 - Commande pour construire le Serveur : `./build.sh` ou `sh build.sh`
 - Commande pour mettre en marche le Serveur : `./run.sh` ou `sh run.sh`
@@ -57,8 +64,7 @@ Selon nos expérimentations, il serait plus difficile de partir de zéro l'appli
   
 Le SDK de Facetec possède de nombreux composants additionnels et utilise un webpack. C'est donc en grande partie pour cela que l'on recommanderait de partir du sdk. (afin d'avoir tout le nécessaire) De plus, il n'y a pas de documentation ni de service à jour qui aide à monter l'application. (exemple pour REACT-Native : facetec-module-bridge. ([voir la documentation du module](https://www.npmjs.com/package/react-native-facetec)))  
   
-Si le projet est très grand, doit possèder beaucoup de fonctionnalités, ou se distribue à grande échelle, nous recommandons fortement de monter votre propre application et créer vos propres requêtes afin de les adapter plus facilement à vos besoins. ([voir exemple](/screens/Components/API/api.tsx))  
-[a relative link](App.tsx)
+Si le projet est très grand, doit possèder beaucoup de fonctionnalités, ou se distribue à grande échelle, nous recommandons fortement de monter votre propre application et créer vos propres requêtes afin de les adapter plus facilement à vos besoins. ([voir exemple requêtes](/screens/Components/API/api.tsx))  
 
 # Test de l'api de l'application mobile
 
