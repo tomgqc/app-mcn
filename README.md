@@ -86,12 +86,12 @@ Host (Nom)
 Une fois ces fichiers créés, ouvrir visual studio code puis aller dansl'onglet **Help** puis **Show All Commands**. Par la suite, tapez Remote-SSH pour établir la connection à distance.
 **Note : Vous pouvez ajouter un fichier de configuration (voir un peu plus haut) et assurez-vous d'autoriser la connexion ssh sur les serveurs.**
 
-### Procédure de lancement pour le Serveur Standard : (Pas encore fonctionnel)###
+### Procédure de lancement pour le Serveur Standard : (Pas encore fonctionnel)
 Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: http://localhost:8080
 - Commande pour construire le Serveur : `docker-compose build`
 - Commande pour mettre en marche le Serveur : `docker-compose up`
 
-### Procédure de lancement pour le Serveur Modifié : (pas testé!)###
+### Procédure de lancement pour le Serveur Modifié : (pas testé!)
 Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: http://localhost:8080
 - Commande pour construire le Serveur : `./build.sh` ou `sh build.sh`
 - Commande pour mettre en marche le Serveur : `./run.sh` ou `sh run.sh`
