@@ -73,13 +73,25 @@ Note : La liste de commandes n'est que basique. Référez-vous à la documentati
 - Pour montrer les données enregistrées : `db.collection.find()`
 
 ### Guide Connexion SSH au serveur : ###
+Note : Ce guide est fait avec Visual Studio Code
+- Créer un fichier.pem puis mettre la clé privé fourni à l'intérieur
+- Créer un fichier config puis mettre le texte suivant : 
+```
+Host (Nom)
+    HostName [Adresse IP Publique de l'hôte]
+    User [le nom de l'utilisateur]
+    IdentityFile [Location du fichier.pem]
+```
+  
+Une fois ces fichiers créés, ouvrir visual studio code puis aller dansl'onglet **Help** puis **Show All Commands**. Par la suite, tapez Remote-SSH pour établir la connection à distance.
+**Note : Vous pouvez ajouter un fichier de configuration (voir un peu plus haut) et assurez-vous d'autoriser la connexion ssh sur les serveurs.**
 
-### Procédure de lancement pour le Serveur Standard : ###
+### Procédure de lancement pour le Serveur Standard : (Pas encore fonctionnel)###
 Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: http://localhost:8080
 - Commande pour construire le Serveur : `docker-compose build`
 - Commande pour mettre en marche le Serveur : `docker-compose up`
 
-### Procédure de lancement pour le Serveur Modifié : ###
+### Procédure de lancement pour le Serveur Modifié : (pas testé!)###
 Note : Le serveur, à moins qu'il y est eu modification, va être lancé sur: http://localhost:8080
 - Commande pour construire le Serveur : `./build.sh` ou `sh build.sh`
 - Commande pour mettre en marche le Serveur : `./run.sh` ou `sh run.sh`
